@@ -1,0 +1,186 @@
+/* Fundo com gradiente nas cores da Suzano */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(180deg, #98b4ff 100%, #b0cdf8 40%, #ffffff 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #333;
+  padding: 0;
+}
+
+/* Cabeçalho fixo colado no topo */
+.top-bar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  border-bottom: 2px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  gap: 16px;
+}
+
+/* Logo aumentada */
+.logo {
+  height: 60px;
+  border-radius: 4px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.page-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #002F6C;
+  margin: 0;
+}
+
+/* Centralizar botões e campo de busca */
+.tab-buttons,
+#filtro {
+  text-align: center;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* Botões das abas */
+.tab-buttons button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: #005C9C;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.tab-buttons button:hover {
+  background-color: #00457a;
+}
+
+/* Campo de busca com fundo sólido e sombra ao focar */
+#transportadoraInput {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 14px 10px 38px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #ffffff; /* fundo sólido */
+  background-image: url('https://img.icons8.com/ios-glyphs/30/000000/search--v1.png');
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 18px;
+  transition: box-shadow 0.3s ease;
+}
+
+#transportadoraInput:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 92, 156, 0.4);
+}
+
+/* Tabelas */
+table {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 40px auto; /* centraliza e afasta do topo/bottom */
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f8fefe;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+th {
+  background-color: #0066b3;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background-color: #f1f9ff;
+}
+
+/* Abas */
+.tab-content {
+  display: none;
+  padding: 0 20px; /* Espaço lateral nas tabelas também */
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Estilo para emoji/check */
+.status-feito {
+  font-size: 20px;
+  color: green;
+}
+
+/* Estilo para dias em atraso */
+.atrasado {
+  color: red;
+  font-weight: bold;
+}
+
+/* Estilo para dias futuros (alerta leve) */
+.faltam-dias {
+  color: #ff8c00;
+  font-weight: 500;
+}
+
+/* Responsividade para telas menores que 600px */
+@media (max-width: 600px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .page-title {
+    font-size: 18px;
+    margin-top: 10px;
+    text-align: left;
+  }
+
+  #transportadoraInput {
+    width: 90%;
+  }
+
+  .tab-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin: 0 10px;
+  }
+
+  th, td {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
